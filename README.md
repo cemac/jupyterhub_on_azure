@@ -1,17 +1,16 @@
-# Jupyterhub on azure
+<div align="center">
+<a href="https://www.cemac.leeds.ac.uk/">
+  <img src="https://github.com/cemac/cemac_generic/blob/master/Images/cemac.png"></a>
+  <br>
+</div>
 
-This repository contains scripts for automatic creation of customised JupyterHub instances running on Azure cloud designed for multi-user classes.  This doesn't (yet) use docker or elastic scaling. It's just a plan old server in the cloud -- albeit one that we can set up and tear down at will. 
+# CEMAC FORK OF MIKE CROUCHERS JUPYERHUB ON AZURE
 
-People can use it to set up their own servers -- no need to speak to the IT department if they don't want to.
+This repository contains scripts for automatic creation of customised JupyterHub instances running on Azure cloud designed for multi-user classes. 
 
 ## Setting Up a new server
 
-* I'M CURRENTLY DEVELOPING THIS. 
-* IT'S NOT YET READY FOR GENERAL USE. 
-* MANY THINGS MISSING.
-* DOCUMENTATION IS NOT UP TO DATE.
-* IT'S VERY SPECIFIC FOR THE COURSE WHO ORIGINALLY NEEDED IT.
-
+* Install Azure CLI or access the Cloud shell from https://portal.azure.com/
 * Clone this repository, modify and run `create_vm.sh` from your local machine.  This creates the Azure VM
 * Log into the created Azure VM, clone this repo and run `install.sh`
 
@@ -48,10 +47,18 @@ sudo systemctl restart jupyterhub
 sudo systemctl status jupyterhub
 ```
 
-## JupyterHub cloud installs elsewhere
+## FUTURE
 
-If you don't like how this one works, you may like one of the following
+* 2019/2020 Move to containerised Kubrenetes server (JupyterHubLeeds Repository for development *requests may be made to collaborate on this project*)
 
-The Data Science VM has JupyterHub pre-installed (and JupyterLab on the Ubuntu DSVM) – https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/overview 
+## COLLABORATING
 
-Azure Lab Services - https://azure.microsoft.com/en-us/services/lab-services/ 
+Collaboration is very welcome and encouraged. *Collaborating Guidelines Comming soon*
+
+## ACKNOWLEGEMENTS
+
+Thanks to Mike Croucher for Setting this up.
+
+## LICENSE 
+
+*coming soon* 
