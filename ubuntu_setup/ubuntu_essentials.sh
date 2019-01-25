@@ -19,6 +19,8 @@ sudo apt-get upgrade
 # Set up firewall and allow traffic
 sudo ufw status
 sudo ufw allow 22
+sudo ufw allow 443
+sudo ufw allow 8000
 sudo ufw allow ssh
 sudo ufw allow OpenSSH
 # Now enable the firewall, a warning will appear
@@ -65,3 +67,27 @@ chmod 755 gen_users.sh
 sudo ./gen_users.sh
 # You will now have a file ~/users.txt with a set of users and passwords
 # ls /home/ will display all users
+# --------------------------------------------------
+# Section 3 - Back Up
+# --------------------------------------------------
+# Connect the data drive
+# sudo mkdir /datadrive
+# The datadrive is probably going to be connected /dev/sdc1
+# sudo mount /dev/sdc1 /datadrive
+
+# Connect the backup drive
+# sudo mkdir /backup
+# The backup drive is probably going to be connected /dev/sdd1
+# sudo mount /dev/sdd1 /backup
+
+#Install rsnapshot to do the backups
+sudo apt-get -y install rsnapshot
+#Snapshot_root location
+sudo sed -i s,/var/cache/rsnapshot/,/backup/,g /etc/rsnapshot.conf
+#We don't want to back up /etc and /usr/local so comment these lines out
+sudo sed -i 's,backup\t/etc,#backup\t/etc,g' /etc/rsnapshot.conf
+sudo sed -i 's,backup\t/usr/local,#backup /usr/local,g' /etc/rsnapshot.conf
+#Activate the cron job by uncommenting the relevant lines
+sed -i '/alpha/s/^#//g' /etc/cron.d/rsnapshot
+sed -i '/beta/s/^#//g' /etc/cron.d/rsnapshot
+sed -i '/gamma/s/^#//g' /etc/cron.d/rsnapshot

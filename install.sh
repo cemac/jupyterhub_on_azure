@@ -48,7 +48,7 @@ sudo apt-get -y install apg
 #Install pre-reqs for jupyterhub
 sudo apt-get -y install npm
 sudo apt-get -y install python3-pip
-sudo apt-get -y install nodejs-legacy
+sudo apt-get -y install nodejs
 #Update node
 sudo npm cache clean -f
 sudo npm install -g n
@@ -81,7 +81,7 @@ sudo python3 -m pip install cartopy
 sudo apt-get -y install libnetcdf-dev netcdf-bin
 sudo python3 -m pip install netCDF4
 
-#Install nbgrader
+# Install nbgrader
 sudo python3 -m pip install nbgrader
 jupyter nbextension install --system --py nbgrader --overwrite
 jupyter nbextension enable --system --py nbgrader
@@ -91,14 +91,64 @@ jupyter serverextension enable --system --py nbgrader
 jupyter nbextension disable --sys-prefix create_assignment/main
 sudo -H -u instructor jupyter nbextension enable --user create_assignment/main
 
-#Move certificate files
+# Move certificate files
 secretsname=$(sudo find /var/lib/waagent/ -name "*.prv" | cut -c -57)
 sudo mkdir -p /etc/jupyter/ssl
 sudo cp $secretsname.crt /etc/jupyter/ssl/mycert.cert
 sudo cp $secretsname.prv /etc/jupyter/ssl/mycert.prv
 
 #Make certificate files readable by the user under which we will run the jupyterhub service
-sudo chgrp azureuser /etc/jupyter/ssl/mycert.cert
+sudo chgrp azureuser /etc/jupyter/ssl/mycert.prv
+sudo chmod g+r /etc/jupyter/ssl/mycert.cert
+sudo chmod g+r /etc/jupyter/ssl/mycert.prv
+
+#Configure certificate in Jupyterhub
+cat << EOF >> ./jupyterhub_config.py
+c.JupyterHub.ssl_key = '/etc/jupyter/ssl/mycert.prv'
+c.JupyterHub.ssl_cert = '/etc/jupyter/ssl/mycert.cert'
+EOF
+
+#Run on port 443 so that it uses https
+cat << EOF >> ./jupyterhub_config.py
+c.JupyterHub.port = 443
+EOF
+
+#Redirect http:// to https://
+cat << EOF >> ./jupyterhub_config.py
+c.ConfigurableHTTPProxy.command = ['configurable-http-proxy', '--redirect-port', '80']
+EOF
+
+#Add jupyterhub admin users
+cat << EOF >> ./jupyterhub_config.py
+c.Authenticator.admin_users = {'azureuser', 'instructor'}
+EOF
+
+#copy the Jupyterhub config file
+sudo mkdir -p /etc/jupyterhub
+sudo cp ./jupyterhub_config.py /etc/jupyterhub/jupyterhub_config.py
+sudo chown -R azureuser:azureuser /etc/jupyterhub/
+
+#Set up sudospawner
+#Following docs at https://github.com/jupyterhub/jupyterhub/wiki/Using-sudo-to-run-JupyterHub-without-root-privileges retrieved 19th September 2018
+echo "Cmnd_Alias JUPYTER_CMD=/usr/local/bin/sudospawner" | sudo tee -a /etc/sudoers
+echo "%jupyterhub ALL=(azureuser) /usr/bin/sudo" | sudo tee -a /etc/sudoers
+echo "azureuser ALL=(%jupyterhub) NOPASSWD:JUPYTER_CMD" | sudo tee -a /etc/sudoers
+
+#Set up jupyterhub as a service
+sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
+
+#Make our user part of the shadow group so that PAM authentication works
+sudo usermod -a -G shadow azureuser
+
+#Do this next line or we'll not be able to connect to port 443
+#Details at https://github.com/jupyterhub/jupyterhub/issues/774
+sudo setcap 'cap_net_bind_service=+ep' `which nodejs`
+sudo setcap 'cap_net_bind_service=+ep' `which node`
+
+#Enable the jupyterhub service so it starts at boot
+sudo systemctl enable jupyterhub
+#start the service now
+sudo systemctl start jupyterhubureuser /etc/jupyter/ssl/mycert.cert
 sudo chgrp azureuser /etc/jupyter/ssl/mycert.prv
 sudo chmod g+r /etc/jupyter/ssl/mycert.cert
 sudo chmod g+r /etc/jupyter/ssl/mycert.prv

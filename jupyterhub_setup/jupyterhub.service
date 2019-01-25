@@ -3,9 +3,9 @@ Description=Jupyterhub
 After=syslog.target network.target
 
 [Service]
-User=azureuser
-Environment="PATH=/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
-ExecStart=/usr/local/bin/jupyterhub -f /etc/jupyterhub/jupyterhub_config.py --JupyterHub.spawner_class=sudospawner.SudoSpawner
+User=jupyteradmin
+Environment="PATH=/opt/anaconda3/bin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
+ExecStart=/opt/anaconda3/bin/jupyterhub -f /etc/jupyterhub/jupyterhub_config.py --JupyterHub.spawner_class=sudospawner.SudoSpawner
 WorkingDirectory=/etc/jupyterhub/
 
 [Install]
