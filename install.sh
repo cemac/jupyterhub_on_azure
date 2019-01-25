@@ -11,8 +11,8 @@ sudo apt-get update && sudo apt-get install azure-cli
 #Change this so only sudo users have this ability
 sudo sed -i s/DIR_MODE=0755/DIR_MODE=0750/g /etc/adduser.conf
 
-#Add the aliases requested from the academics to .bashrc
-cat << EOF >> /etc/skel/.bashrc
+# Add the aliases requested from the academics to .bashrc
+sudo cat << EOF >> /etc/skel/.bashrc
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
@@ -38,20 +38,20 @@ sudo apt-get -y install apg
   echo $username:$userpassword | sudo chpasswd
   echo "UserID:" $username "has been created with the following password " $userpassword >> $password_file
  done
- 
+
  #Install the instructor username
  sudo adduser --disabled-password --gecos "" instructor
  userpassword=`apg -n 1`
  echo instructor:$userpassword | sudo chpasswd
  echo "UserID:" instructor "has been created with the following password " $userpassword >> $password_file
- 
+
 #Install pre-reqs for jupyterhub
 sudo apt-get -y install npm
 sudo apt-get -y install python3-pip
 sudo apt-get -y install nodejs-legacy
 #Update node
-sudo npm cache clean -f 
-sudo npm install -g n 
+sudo npm cache clean -f
+sudo npm install -g n
 sudo n stable
 #install configurable-http-proxy
 sudo npm install -g configurable-http-proxy
@@ -87,7 +87,7 @@ jupyter nbextension install --system --py nbgrader --overwrite
 jupyter nbextension enable --system --py nbgrader
 jupyter serverextension enable --system --py nbgrader
 #Disable create assignment for all users and then enable it for instructor only
-#Following the prodedure at https://nbgrader.readthedocs.io/en/latest/user_guide/installation.html retrieved 11/12/2018 
+#Following the prodedure at https://nbgrader.readthedocs.io/en/latest/user_guide/installation.html retrieved 11/12/2018
 jupyter nbextension disable --sys-prefix create_assignment/main
 sudo -H -u instructor jupyter nbextension enable --user create_assignment/main
 
@@ -172,5 +172,3 @@ sudo sed -i 's,backup\t/usr/local,#backup /usr/local,g' /etc/rsnapshot.conf
 sed -i '/alpha/s/^#//g' /etc/cron.d/rsnapshot
 sed -i '/beta/s/^#//g' /etc/cron.d/rsnapshot
 sed -i '/gamma/s/^#//g' /etc/cron.d/rsnapshot
-
-
