@@ -16,21 +16,26 @@ This repository contains scripts for automatic creation of customised JupyterHub
 - NB: This is designed to work following Leeds Uni Practice
 - Central IT control the Azure account and must set up VM (Jan 2019)
 ```
+
 # Version 2.0 #
 
-Following on from Mike crouchers's original version.
+Following on from Mike Croucher's jupyterhub_on_azure setup, Version builds on documentation and functionality.
 
 ## Features ##
 
+* Set up JupyterHub on Azure Ubuntu LTS machine
+* Server settings
 * Anaconda Installation
+* Jupyter hub configuration
 * Certificate generation
+* Legacy VM creation scripts
 
 ## Requirements
 
-* Azure VM, IP address and Admin ID to access
+* Azure VM, IP address and Admin ID to access (via IT following [create_vm](create_vm))
 * UBUNTU 18.04 LTS (*recommended*)
 
-## Installation (recommended method)
+## Installation/ Usage (recommended method)
 
 * ssh to Azure machine `ssh -Y <adim_ID>@<VM_IP>`
 * `git clone https://github.com/cemac/jupyterhub_on_azure.git`
@@ -38,13 +43,23 @@ Following on from Mike crouchers's original version.
 * Follow [python_setup](./python_setup) to set up python environment
 * Follow [jupyterhub_setup](./jupyterhub_setup) to set up Jupyter Hub
 
-## Usage ##
+*NB previously this set up was done using mike's create_vm scripts, however this
+is now managed by Leeds central IT - the scripts are preserved for reference in [create_vm](create_vm)*
+
+## Tips ##
 
 ## COLLABORATING
 
 Collaboration is very welcome and encouraged.
 * A full guide on submitting issue and bug are given in our [contribution guidelines](https://github.com/cemac/jupyterhub_on_azure/blob/master/CONTRIBUTING.md)
 * Please use our issue templates for feature requests and bug fixes.
+
+<hr>
+
+## FUTURE ##
+
+This project will move to a containerised set up in the future in a new JupyterHubLeeds
+project for academic year 2019/2020.
 
 <hr>
 
