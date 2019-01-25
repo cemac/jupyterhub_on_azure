@@ -53,26 +53,15 @@ sudo apt-get update && sudo apt-get install azure-cli
 # By default, users can read the files in each other's home directory.
 # Change this so only sudo users have this ability
 sudo sed -i s/DIR_MODE=0755/DIR_MODE=0750/g /etc/adduser.conf
-# create users
-number_of_users=41
-password_file=~/users.txt
 # Install apg for password generation
 sudo apt-get -y install apg
-# On Azure, the following creates errors like
-# sent invalidate(group) request, exiting
-# sent invalidate(passwd) request, exiting
-# This shouldn't be a problem
+# create users and empty users.txt
+number_of_users=42
+password_file=~/users.txt
 touch $password_file
-for i in `seq 1 $number_of_users`;
-  do
-  username=training_user$i
-  sudo adduser --disabled-password --gecos "" $username
-  userpassword=`apg -n 1`
-  echo $username:$userpassword | sudo chpasswd
-  echo "UserID:" $username "has been created with the following password " $userpassword >> $password_file
-done
-#Install the instructor username
-sudo adduser --disabled-password --gecos "" instructor
-userpassword=`apg -n 1`
-echo instructor:$userpassword | sudo chpasswd
-echo "UserID:" instructor "has been created with the following password " $userpassword >> $password_file
+# Makesure git script is executable
+chmod 755 gen_users.sh
+# run script with sudo privileges
+sudo ./gen_users.sh
+# You will now have a file ~/users.txt with a set of users and passwords
+# ls /home/ will display all users

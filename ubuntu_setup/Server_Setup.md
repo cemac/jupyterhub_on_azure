@@ -9,9 +9,9 @@ These files help you set up the intial configuration of the UBUNTU server
 # Contents
 
 * [ubuntu_essentials.sh]() The full set up bash commands to set up Ubuntu server
-* [.bashrc]() - example .bashrc file
-* [init.el]() - emacs editor setting to stop annoying buffers *if use emacs*
-* [users.txt]() - example password file (not one is real use)
+* [.bashrc](./.bashrc) - example .bashrc file
+* [init.el](./init.el) - emacs editor setting to stop annoying buffers *if use emacs*
+* [gen_users.sh]()./gen_users.sh) shell script to create all user accounts
 
 # Usage
 
@@ -38,11 +38,20 @@ have palatially done this.
 
 ## Section 2 - Users
 
-edit `etc/skel/.bashrc` using favourite editor with sudo
+1.edit `etc/skel/.bashrc` using favourite editor with sudo
 add aliases etc you want to be default across users e.g.
-```bash
-# Personal aliases:
-alias rm='rm -i'
-alias mv='mv -i'
-alias cp='cp -i'
-```
+  ```bash
+  # Personal aliases:
+  alias rm='rm -i'
+  alias mv='mv -i'
+  alias cp='cp -i'
+  ```
+2. Alter settings and set number of users e.g. 42
+3. Running ./gen_users.sh creates random passwords for 42 training users and 1 instructor
+  unless set otherwise. You will now have all the user accounts on the machine.
+
+## Next Step ##
+
+Now the server is ready to set up python and jupyterhub
+
+Follow the steps in [python_setup](../python_setup).
