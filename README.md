@@ -34,6 +34,9 @@ Following on from Mike crouchers's original version.
 
 * ssh to Azure machine `ssh -Y <adim_ID>@<VM_IP>`
 * `git clone https://github.com/cemac/jupyterhub_on_azure.git`
+* Follow [ubuntu_setup](./ubuntu_setup) to set up server and users
+* Follow [python_setup](./python_setup) to set up python environment
+* Follow [jupyterhub_setup](./jupyterhub_setup) to set up Jupyter Hub
 
 ## Usage ##
 
