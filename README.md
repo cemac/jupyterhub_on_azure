@@ -6,59 +6,49 @@
 
 # CEMAC FORK OF MIKE CROUCHERS JUPYERHUB ON AZURE
 
-This repository contains scripts for automatic creation of customised JupyterHub instances running on Azure cloud designed for multi-user classes. 
 
-## Setting Up a new server
+[![GitHub release](https://img.shields.io/badge/release-v.2.0-blue.svg)](
+https://github.com/cemac/jupyterhub_on_azure/releases/tag/2.0)
 
-* Install Azure CLI or access the Cloud shell from https://portal.azure.com/
-* Clone this repository, modify and run `create_vm.sh` from your local machine.  This creates the Azure VM
-* Log into the created Azure VM, clone this repo and run `install.sh`
+This repository contains scripts for automatic creation of customised JupyterHub instances running on Azure cloud designed for multi-user classes.
 
-## Useful sysadmin notes when using the resulting server
-
-### Adding accounts to sudoers list
-
-When running your course, you may have classroom assistants or other trusted users who you may want to give full sudo access to.
-To add `training_user2` to the sudoers list for example:
-
+```diff
+- NB: This is designed to work following Leeds Uni Practice
+- Central IT control the Azure account and must set up VM (Jan 2019)
 ```
-sudo usermod -aG sudo training_user2
-```
+# Version 2.0 #
 
-You'll get the following error messages
-```
-sent invalidate(passwd) request, exiting
-sent invalidate(group) request, exiting
-sent invalidate(passwd) request, exiting
-sent invalidate(group) request, exiting
-```
+Following on from Mike crouchers's original version.
 
-These are nothing to worry about
+## Features ##
 
-### Stopping and starting the JupyterHub service
+* Anaconda Installation
+* Certificate generation
 
-The JupyterHub service can be stopped, started etc with the following commands
+## Requirements
 
-```
-sudo systemctl daemon-reload
-sudo systemctl start jupyterhub
-sudo systemctl stop jupyterhub
-sudo systemctl restart jupyterhub
-sudo systemctl status jupyterhub
-```
+* Azure VM, IP address and Admin ID to access
+* UBUNTU 18.04 LTS (*recommended*)
 
-## FUTURE
+## Installation (recommended method)
 
-* 2019/2020 Move to containerised Kubrenetes server (JupyterHubLeeds Repository for development *requests may be made to collaborate on this project*)
+* ssh to Azure machine `ssh -Y <adim_ID>@<VM_IP>`
+* `git clone https://github.com/cemac/jupyterhub_on_azure.git`
+
+## Usage ##
 
 ## COLLABORATING
 
-Collaboration is very welcome and encouraged. *Collaborating Guidelines Comming soon*
+Collaboration is very welcome and encouraged.
+* A full guide on submitting issue and bug are given in our [contribution guidelines](https://github.com/cemac/jupyterhub_on_azure/blob/master/CONTRIBUTING.md)
+* Please use our issue templates for feature requests and bug fixes.
+
+<hr>
 
 ## ACKNOWLEGEMENTS
 
 Thanks to Mike Croucher for Setting this up.
 
-## LICENSE 
+## LICENSE
 
-*coming soon* 
+This project is currently licensed under the [MIT license](https://choosealicense.com/licenses/mit/).
