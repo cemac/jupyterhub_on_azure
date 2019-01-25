@@ -11,6 +11,7 @@ These files help you set up the intial configuration of the UBUNTU server
 * [ubuntu_essentials.sh]() The full set up bash commands to set up Ubuntu server
 * [.bashrc]() - example .bashrc file
 * [init.el]() - emacs editor setting to stop annoying buffers *if use emacs*
+* [users.txt]() - example password file (not one is real use)
 
 # Usage
 
@@ -23,7 +24,7 @@ These files help you set up the intial configuration of the UBUNTU server
 
 # ubuntu_essentials.sh #
 
-## Section 1
+## Section 1 - Security and set up
 
 1. Update system (there may be security patches bug fixes etc)
 2. Set up and Configure firewall and allows ssh connections. IT may
@@ -33,3 +34,15 @@ have palatially done this.
   *Tip - all `ufw` commands require sudo*
 3. Set up favourite editor e.g. emacs use to configure .bashrc etc
   * can just `cp .bashrc ~/.bashrc` if want to use same as the example
+4. Optional set up Azure CLI (if have access to Azure account)
+
+## Section 2 - Users
+
+edit `etc/skel/.bashrc` using favourite editor with sudo
+add aliases etc you want to be default across users e.g.
+```bash
+# Personal aliases:
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+```
