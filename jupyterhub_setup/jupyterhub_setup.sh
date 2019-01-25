@@ -72,10 +72,16 @@ sudo chown -R jupyteradmin:jupyteradmin /etc/jupyterhub/
 
 # Set up sudospawner
 # Following docs at https://github.com/jupyterhub/jupyterhub/wiki/Using-sudo-to-run-JupyterHub-without-root-privileges retrieved 19th September 2018
+#
+# WARNING /etc/sudoers can have NO MISTAKES
+#
+# PRECAUTION chmod
+sudo chmod 446 /etc/sudoers
 echo "Cmnd_Alias JUPYTER_CMD=/usr/local/bin/sudospawner" | sudo tee -a /etc/sudoers
 echo "%jupyterhub ALL=(jupyteradmin) /usr/bin/sudo" | sudo tee -a /etc/sudoers
 echo "jupyteradmin ALL=(%jupyterhub) NOPASSWD:JUPYTER_CMD" | sudo tee -a /etc/sudoers
-
+# If there is a mistake you won't be able to re sudo the sudo file!
+sudo chmod 440 /etc/sudoers
 # Set up jupyterhub as a service
 sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
 

@@ -48,6 +48,9 @@ is now managed by Leeds central IT - the scripts are preserved for reference in 
 
 ## Tips ##
 
+* Your connection is not private - `NET::ERR_CERT_AUTHORITY_INVALID`
+  * [fix the clock](https://askubuntu.com/questions/214246/how-to-fix-wrong-system-time-and-date)
+
 ## COLLABORATING
 
 Collaboration is very welcome and encouraged.
