@@ -1,0 +1,828 @@
+    1  sudo -i
+    2  dir
+    3  ls
+    4  id
+    5  pwd
+    6  ls ..
+    7  cat /proc/cpuinfo 
+    8  cat /proc/meminfo 
+    9  df -h
+   10  ls /backup
+   11  ls -l
+   12  more users.txt 
+   13  ls -l
+   14  df -h
+   15  mount
+   16  sudo -i
+   17  emacs
+   18  sudo apt install emacs25
+   19  emacs -nw .bashrc 
+   20  emacs .emacs.d/init.el
+   21  sudo apt-get update
+   22  sudo apt-get upgrade
+   23  ufw status
+   24  sudo ufw status
+   25  sudo ufw allow OpenSSH
+   26  sudo ufw enable
+   27  sudo emacs -nw /etc/default/ufw
+   28  sudo ufw allow 22
+   29  sudo ufw enable
+   30  sudo ufw allow ssh
+   31  sudo ufw enable
+   32  sudo ufw status
+   33  AZ_REPO=$(lsb_release -cs)
+   34  echo $AZ_REPO
+   35  cho "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" |     sudo tee /etc/apt/sources.list.d/azure-cli.list
+   36  echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" |     sudo tee /etc/apt/sources.list.d/azure-cli.list
+   37  curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+   38  sudo apt-get install apt-transport-https
+   39  sudo apt-get update && sudo apt-get install azure-cli
+   40  sudo sed -i s/DIR_MODE=0755/DIR_MODE=0750/g /etc/adduser.conf
+   41  # Add the aliases requested from the academics to .bashrc
+   42  cat << EOF >> /etc/skel/.bashrc
+   43  alias rm='rm -i'
+   44  alias mv='mv -i'
+   45  alias cp='cp -i'
+   46  EOF
+   47  sudo cat << EOF >> /etc/skel/.bashrc
+   48  alias rm='rm -i'
+   49  alias mv='mv -i'
+   50  alias cp='cp -i'
+   51  EOF
+   52  sudo emacs -nw /etc/skel/.bashrc 
+   53  sudo grep IpV6 /etc/default/ufw
+   54  sudo grep V6 /etc/default/ufw
+   55  sudo grep IPV6 /etc/default/ufw
+   56  sudo apt-get -y install apg
+   57  pwd
+   58  ls
+   59  number_of_users=42
+   60  emacs users.txt
+   61  touch $password_file
+   62  echo $passwordfile
+   63  password_file=~/users.txt
+   64  echo $passwordfile
+   65  touch $password_file
+   66  echo $passwordfile
+   67  echo $number_of_users
+   68  password_file=users.txt
+   69  echo $passwordfile
+   70  echo $password_file
+   71  touch $password_file
+   72  for i in `seq 1 $number_of_users`;   do   username=training_user$i;   sudo adduser --disabled-password --gecos "" $username;   userpassword=`apg -n 1`;   echo $username:$userpassword | sudo chpasswd;   echo "UserID:" $username "has been created with the following password " $userpassword >> $password_file; done
+   73  ls
+   74  more users.txt 
+   75  sudo adduser --disabled-password --gecos "" instructor
+   76  userpassword=`apg -n 1`
+   77  echo instructor:$userpassword | sudo chpasswd
+   78  echo "UserID:" instructor "has been created with the following password " $userpassword >> $password_file
+   79  ls
+   80  more users.txt 
+   81  ls /home/
+   82  ls
+   83  wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh
+   84  bash Anaconda3-5.3.1-Linux-x86_64.sh 
+   85  ls
+   86  rm -rf Anaconda3-5.3.1-Linux-x86_64.sh 
+   87  cd /tmp
+   88  curl -O $ https://repo.anaconda.com/archive/Anaconda3-latest-Linux-x86_64.sh
+   89  wget https://repo.anaconda.com/archive/Anaconda3-latest-Linux-x86_64.sh
+   90  wget https://repo.anaconda.com/archive/Anaconda3-5.3.1-Linux-x86_64.sh
+   91  sudo bash Anaconda3-5.3.1-Linux-x86_64.sh 
+   92  rm -rf /opt/anaconda3/
+   93  sudo rm -rf /opt/anaconda3/
+   94  sudo bash Anaconda3-5.3.1-Linux-x86_64.sh 
+   95  ls
+   96  cd
+   97  ls
+   98  sudo chmod ugo+w /opt/anaconda3
+   99  sudo emacs /etc/profile
+  100  conda install -c conda-forge jupyterhub
+  101  source .bashrc
+  102  emacs .bashrc
+  103  ls
+  104  la .emacs.d/
+  105  more .emacs.d/%backup%~ 
+  106  emacs .emacs.d/init.el 
+  107  .saves/
+  108  ls .saves/
+  109  ls
+  110  rm -f .emacs.d/%backup%~ 
+  111  ls
+  112  source .bashrc
+  113  conda install -c conda-forge jupyterhub
+  114  sudo conda install -c conda-forge jupyterhub
+  115  cd /opt/
+  116  la
+  117  ls -l
+  118  sudo chmod -R g+w miniconda3
+  119  sudo chmod -R g+w anaconda3/
+  120  sudo chown -R root:jupyteradmin anaconda3
+  121  la
+  122  ls -l
+  123  cd
+  124  sudo conda install -c conda-forge jupyterhub
+  125  conda install -c conda-forge jupyterhub
+  126  conda install cartopy
+  127  conda install cython
+  128  conda install netCDF4
+  129  conda install nbgrader
+  130  conda install sudospawner
+  131  conda install -c conda-forge nodejs 
+  132  conda install -c anaconda-nb-extensions anaconda-nb-extensions 
+  133  conda install -c anaconda-nb-extensions nb_conda
+  134  conda clean -t
+  135  conda list -e > requirements.txt
+  136  conda env export | grep -v "^prefix: " > environment.yml
+  137  ls
+  138  sudo npm cache clean -f
+  139  which npm
+  140  npm cache clean -f
+  141  npm install -g n
+  142  sudo n stable
+  143  n stable
+  144  which n
+  145  sudo /opt/anaconda3/bin/n stable
+  146  npm install -g configurable-http-proxy
+  147  jupyterhub --generate-config
+  148  jupyter nbextension install --system --py nbgrader --overwrite
+  149  conda install -c conda-forge nbgrader
+  150  jupyter nbextension install --system --py nbgrader --overwrite
+  151  sudo jupyter nbextension install --system --py nbgrader --overwrite
+  152  which jupyter
+  153  sudo /opt/anaconda3/bin/jupyter nbextension install --system --py nbgrader --overwrite
+  154  jupyter nbextension enable --system --py nbgrader
+  155  sudo /opt/anaconda3/bin/jupyter nbextension enable --system --py nbgrader
+  156  sudo /opt/anaconda3/bin/jupyter serverextension enable --system --py nbgrader
+  157  jupyter nbextension disable --sys-prefix create_assignment/main
+  158  sudo -H -u instructor jupyter nbextension enable --user create_assignment/main
+  159  sudo -H -u instructor /opt/anaconda3/bin/jupyter nbextension enable --user create_assignment/main
+  160  secretsname=$(sudo find /var/lib/waagent/ -name "*.prv" | cut -c -57)
+  161  sudo mkdir -p /etc/jupyter/ssl
+  162  sudo cp $secretsname.crt /etc/jupyter/ssl/mycert.cert
+  163  ls
+  164  secretsname=$(sudo find /var/lib/waagent/ -name "*.prv" | cut -c -57)
+  165  each $secretsname
+  166  echo $secretsname
+  167  ls /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B/
+  168  sudo ls /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B/
+  169  sudo ls /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B
+  170  sudo more /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B
+  171  sudo ls /var/lib/waagent/
+  172  sudo find /var/lib/waagent/ -name "*.prv"
+  173  /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B.crt
+  174  more /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B.crt
+  175  sudo more /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B.crt
+  176  echo $secretsname
+  177  sudo cp /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B.crt /etc/jupyter/ssl/mycert.cert
+  178  sudo cp /var/lib/waagent/3579A804863AEB98FD7FF81D707E7237931EC194.prv /etc/jupyter/ssl/mycert.prv
+  179  ls
+  180  cd ..
+  181  ls
+  182  ls -lrt
+  183  ls azureuser/
+  184  ;s
+  185  ls
+  186  ls azureuser/
+  187  sudo chgrp jupyteradmin /etc/jupyter/ssl/mycert.prv
+  188  sudo chmod g+r /etc/jupyter/ssl/mycert.cert
+  189  sudo chmod g+r /etc/jupyter/ssl/mycert.prv
+  190  cd
+  191  cat << EOF >> ./jupyterhub_config.py
+  192  c.JupyterHub.ssl_key = '/etc/jupyter/ssl/mycert.prv'
+  193  c.JupyterHub.ssl_cert = '/etc/jupyter/ssl/mycert.cert'
+  194  EOF
+  195  ls
+  196  cat << EOF >> ./jupyterhub_config.py
+  197  c.JupyterHub.port = 443
+  198  EOF
+  199  cat << EOF >> ./jupyterhub_config.py
+  200  c.ConfigurableHTTPProxy.command = ['configurable-http-proxy', '--redirect-port', '80']
+  201  EOF
+  202  cat << EOF >> ./jupyterhub_config.py
+  203  c.Authenticator.admin_users = {'jupyteradmin', 'instructor'}
+  204  EOF
+  205  sudo mkdir -p /etc/jupyterhub
+  206  sudo cp ./jupyterhub_config.py /etc/jupyterhub/jupyterhub_config.py
+  207  sudo chown -R jupyteradmin:jupyteradmin /etc/jupyterhub/
+  208  echo "Cmnd_Alias JUPYTER_CMD=/usr/local/bin/sudospawner" | sudo tee -a /etc/sudoers
+  209  echo "%jupyterhub ALL=(azureuser) /usr/bin/sudo" | sudo tee -a /etc/sudoers
+  210  echo "azureuser ALL=(%jupyterhub) NOPASSWD:JUPYTER_CMD" | sudo tee -a /etc/sudoers
+  211  sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
+  212  emacs jupyterhub.service
+  213  sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
+  214  sudo usermod -a -G shadow jupyteradmin
+  215  sudo setcap 'cap_net_bind_service=+ep' `which nodejs`
+  216  sudo systemctl enable jupyterhub
+  217  sudo systemctl start jupyterhub
+  218  sudo ufw allow 8000
+  219  pw
+  220  ps
+  221  top
+  222  sudo systemctl status jupyterhub
+  223  ls /usr/local/bin/
+  224  which jupyter
+  225  which jupyterhub
+  226  emacs jupyterhub.service 
+  227  sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
+  228  sudo systemctl start jupyterhub
+  229  systemctl daemon-reload
+  230  DeduceDangerGirdle
+  231  emacs jupyterhub.service 
+  232  systemctl daemon
+  233  ls
+  234  exit
+  235  ls
+  236  sudo systemctl start jupyterhub
+  237  ls
+  238  top
+  239  ls /var/log/syslog
+  240  echo "%jupyterhub ALL=(jupyteradmin) /usr/bin/sudo" | sudo tee -a /etc/sudoers
+  241  echo "jupyteradmin ALL=(%jupyterhub) NOPASSWD:JUPYTER_CMD" | sudo tee -a /etc/sudoers
+  242  sudo chown -R jupyteradmin:jupyteradmin /etc/jupyterhub/
+  243  sudo chgrp jupyteradmin /etc/jupyter/ssl/mycert.prv
+  244  echo "%jupyterhub ALL=(jupyteradmin) /usr/bin/sudo" | sudo tee -a /etc/sudoers
+  245  echo "jupyteradmin ALL=(%jupyterhub) NOPASSWD:JUPYTER_CMD" | sudo tee -a /etc/sudoers
+  246  sudo chown -R jupyteradmin:jupyteradmin /etc/jupyterhub/
+  247  sudo systemctl restart jupyterhub
+  248  sudo systemctl status jupyterhub
+  249  jupyterhub
+  250  ls
+  251  more jupyterhub-proxy.pid 
+  252  sudo chgrp jupyteradmin /etc/jupyter/ssl/mycert.cert
+  253  jupyterhub
+  254  openssl x509 -noout -text -in /etc/jupyter/ssl/mycert.cert
+  255  openssl rsa -noout -text -in /etc/jupyter/ssl/mycert.prv
+  256  secretsname=$(sudo find /var/lib/waagent/ -name "*.prv" | cut -c -57)
+  257  echo $secretsname
+  258  more /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B.cert
+  259  sudo more /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B.cert
+  260  sudo more /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B.prv
+  261  openssl rsa -noout -text -in /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B.prv
+  262  sudo openssl rsa -noout -text -in /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B.prv
+  263  openssl x509 -noout -text -in /var/lib/waagent/3579A804863AEB98FD7FF81D707E7237931EC194.cert
+  264  sudo openssl x509 -noout -text -in /var/lib/waagent/3579A804863AEB98FD7FF81D707E7237931EC194.cert
+  265  sudo openssl x509 -noout -text -in /var/lib/waagent/3579A804863AEB98FD7FF81D707E7237931EC194.prv
+  266  sudo openssl x509 -noout -text -in /var/lib/waagent/3579A804863AEB98FD7FF81D707E7237931EC194.crt
+  267  sudo openssl x509 -noout -text -in /var/lib/waagent/3579A804863AEB98FD7FF81D707E7237931EC194.prv
+  268  sudo openssl rsa -noout -text -in /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B.crt
+  269  sudo openssl rsa -noout -text -in /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B.prv
+  270  jupyterhub
+  271  exit
+  272  ls
+  273  conda activate
+  274  sudo systemctl daemon-reload
+  275  sudo systemctl start jupyterhub
+  276  sudo systemctl status jupyterhub
+  277  sudo setcap 'cap_net_bind_service=+ep' `which node`
+  278  sudo setcap 'cap_net_bind_service=+ep' `which nodejs`
+  279  which nodejs
+  280  sudo systemctl start jupyterhub
+  281  sudo systemctl status jupyterhub
+  282  sudo ufw status
+  283  sudo ufw allow 443
+  284  sudo systemctl start jupyterhub
+  285  sudo ufw status
+  286  sudo systemctl status jupyterhub
+  287  conda install nodejs
+  288  sudo setcap 'cap_net_bind_service=+ep' `which nodejs`
+  289  which nodejs
+  290  sudo apt-get -y install nodejs-legacy
+  291  sudo apt-get -y install nodejs
+  292  which nodejs
+  293  sudo setcap 'cap_net_bind_service=+ep' `which nodejs`
+  294  ls /usr/bin/nodejs
+  295  ls -l /usr/bin/nodejs
+  296  which node
+  297  sudo setcap 'cap_net_bind_service=+ep' `/opt/anaconda3/bin/node`
+  298  sudo setcap 'cap_net_bind_service=+ep' /opt/anaconda3/bin/node
+  299  sudo systemctl status jupyterhub
+  300  sudo systemctl start jupyterhub
+  301  sudo systemctl status jupyterhub
+  302  sudo ufw status
+  303  sudo ufw allo 80
+  304  sudo ufw allow 80
+  305  sudo systemctl restart jupyterhub
+  306  sudo systemctl status jupyterhub
+  307  configurable-http-proxy
+  308  emacs jupyterhub_config.py 
+  309  ls
+  310  sudo find /var/lib/waagent/ -name "*.prv"
+  311  sudo find /var/lib/waagent/ -name "*.crt"
+  312  sudo cp /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B.crt /etc/jupyter/ssl/mycert.cert
+  313  sudo cp /var/lib/waagent/748B50D0EA96F75092DB0EA8E2AD84E10042750B.prv /etc/jupyter/ssl/mycert.prv
+  314  sudo systemctl restart jupyterhub
+  315  sudo systemctl status jupyterhub
+  316  exit
+  317  sudo systemctl start jupyterhub
+  318  sudo systemctl status jupyterhub
+  319  jupyterhub
+  320  conda activate
+  321  sudo systemctl restart jupyterhub
+  322  sudo systemctl status jupyterhub
+  323  /etc/supervisor/conf.d/jupyterhub.conf):
+  324  ls /etc/supervisor/conf.d/jupyterhub.conf
+  325  jupyterhub --ip 10.0.1.2 --port 443 --ssl-key my_ssl.key --ssl-cert my_ssl.cert
+  326  emacs jupyterhub_config.py 
+  327  sudo systemctl start jupyterhubureuser /etc/jupyter/ssl/mycert.cert
+  328  ls /etc/jupyter/ssl/mycert. 
+  329  ls /etc/jupyter/ssl/mycert
+  330  sudo ls /etc/jupyter/ssl/mycert
+  331  sudo ls /etc/jupyter/ssl
+  332  ls -l  /etc/jupyter/ssl
+  333  sudo chmod g+r /etc/jupyter/ssl/mycert.cert
+  334  ls -l  /etc/jupyter/ssl
+  335  more jupyterhub.service 
+  336  ls /etc/jupyter/ssl/
+  337  jupyterhub --ip 10.0.1.2 --port 443 --ssl-key my_ssl.key --ssl-cert my_ssl.cert
+  338  jupyterhub --ip 10.0.1.2 --port 443 --ssl-key /etc/jupyter/ssl/mycert.prv --ssl-cert /etc/jupyter/ssl/mycert.cert
+  339  jupyterhub --ip 10.0.1.2 --port 443
+  340  sudo setcap 'cap_net_bind_service=+ep' `which nodejs`
+  341  ps aux | grep configurable-http-proxy
+  342  kill -9 11812
+  343  kill -9 14856
+  344  ps aux | grep configurable-http-proxy
+  345  kill -9 11688
+  346  sudo systemctl start jupyterhub
+  347  sudo systemctl status jupyterhub
+  348  jupyterhub --ip 10.0.1.2 --port 443
+  349  ps aux | grep configurable-http-proxy
+  350  kill -9 11976
+  351  sudo systemctl status jupyterhub
+  352  sudo systemctl stop jupyterhub
+  353  jupyterhub --ip 10.0.1.2 --port 443
+  354  ps aux | grep "/var/local/anaconda3/bin/configurable-http-proxy" |grep -v grep|awk '{print "kill -9 " $2}'|sh
+  355  ps aux | grep configurable-http-proxy
+  356  ps aux | grep "configurable-http-proxy" |grep -v grep|awk '{print "kill -9 " $2}'|sh
+  357  ps aux | grep configurable-http-proxy
+  358  kill -9 12102
+  359  ps aux | grep configurable-http-proxy
+  360  sudo systemctl status jupyterhub
+  361  sudo systemctl restart jupyterhub
+  362  sudo systemctl status jupyterhub
+  363  ps aux | grep configurable-http-proxy
+  364  exit
+  365  ls
+  366  ls /etc/
+  367  ls /etc/sudoers
+  368  more /etc/sudoers
+  369  sudo emacs -nw /etc/sudoers
+  370  pkexec s
+  371  az vm run-command invoke --resource-group YOUR_RESOURCE_GROUP --name JUPYTER99 --command-id RunShellScript --scripts "chmod 446 /etc/sudoers"
+  372  jupyterhub
+  373  jupyterhub -f jupyterhub_config.py &
+  374  ls
+  375  more users.txt 
+  376  emacs jupyterhub_config.py 
+  377  ps
+  378  kill -9 15670 
+  379  jupyterhub -f jupyterhub_config.py &
+  380  ls
+  381  exit
+  382  ps fu
+  383  ps aux | grep configurable-http-proxy
+  384  jupyterhub --ip 10.0.1.2 --port 443
+  385  jupyterhub
+  386  jupyterhub &
+  387  more users.txt 
+  388  sudo jupyterhub &
+  389  ls
+  390  echo $PATH
+  391  emacs jupyterhub.service 
+  392  ls /etc/jupyterhub/
+  393  tail /etc/jupyterhub/jupyterhub_config.py 
+  394  tail -50 /etc/jupyterhub/jupyterhub_config.py 
+  395  tail -20 jupyterhub_config.py 
+  396  sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
+  397  ps fu
+  398  kill -9 12453
+  399  sudo jupyterhub &
+  400  sudo /opt/anaconda3/bin/jupyterhub &
+  401  jupyterhub 
+  402  pip install sudospawner
+  403  which sudospawner 
+  404  echo "Cmnd_Alias JUPYTER_CMD=/opt/anaconda3/bin/sudospawner" | sudo tee -a /etc/sudoers
+  405  echo "jupyteradmin ALL=(%jupyterhub) NOPASSWD:JUPYTER_CMD" | sudo tee -a /etc/sudoers
+  406  echo "%jupyterhub ALL=(jupyteradmin) /usr/bin/sudo" | sudo tee -a /etc/sudoers
+  407  emacs /etc/sudoers
+  408  sudo emacs /etc/sudoers
+  409  ls
+  410  pkexec visudo
+  411  pkexec emacssudo
+  412  pkexec visudo
+  413  visudo /etc/sudoers
+  414  visudo -f /etc/sudoers
+  415  sudo visudo -f /etc/sudoers
+  416  su 
+  417  pkexec emacs /etc/sudoers
+  418  sudo -s
+  419  ls -l /etc/sudoers
+  420  pkexec chmod 0440 /etc/sudoers
+  421  emacs jupyterhub_config.py 
+  422  ps fu
+  423  jupyterhub -f jupyterhub_config.py &
+  424  emacs jupyterhub_config.py 
+  425  jupyterhub -f jupyterhub_config.py &
+  426  emacs jupyterhub_config.py 
+  427  jupyterhub -f jupyterhub_config.py &
+  428  top
+  429  ps fu
+  430  top | grep jup
+  431  ls
+  432  jupyterhub 
+  433  emacs jupyterhub_config.py 
+  434  jupyterhub 
+  435  kill -9 15994
+  436  jupyterhub &
+  437  kill -9 17708
+  438  ls
+  439  emacs jupyterhub_config.py 
+  440  jupyterhub -f jupyterhub_config.py &
+  441  ls
+  442  more users.txt 
+  443  emacs jupyterhub_config.py 
+  444  jupyterhub --JupyterHub.spawner_class=sudospawner.SudoSpawner &
+  445  emacs jupyterhub_config.py 
+  446  jupyterhub --JupyterHub.spawner_class=sudospawner.SudoSpawner &
+  447  kill -9 18522
+  448  jupyterhub --JupyterHub.spawner_class=sudospawner.SudoSpawner --debug &
+  449  exit
+  450  ls
+  451  ls -l /etc/sudoers
+  452  chmod 446 /etc/sudoers
+  453  sudo chmod 446 /etc/sudoers
+  454  top
+  455  jupyterhub --JupyterHub.spawner_class=sudospawner.SudoSpawner --debug &
+  456  ls
+  457  ps fu
+  458  killall -u jupyteradmin -9
+  459  jupyterhub --JupyterHub.spawner_class=sudospawner.SudoSpawner --debug &
+  460  more users.txt 
+  461  ls -l /etc/sudoers
+  462  visudo /etc/sudoers
+  463  sudo visudo /etc/sudoers
+  464  emacs /etc/sudoers
+  465  ls
+  466  sudo emacs -nw /etc/sudoers
+  467  chmod 440 /etc/sudoers
+  468  sudo chmod 440 /etc/sudoers
+  469  emacs /etc/sudoers
+  470  ls .saves/
+  471  ls .saves/\!etc\!skel\!.bashrc~ 
+  472  ls .emacs.d/auto-save-list/
+  473  more .emacs.d/init.el 
+  474  more ~/.saves/
+  475  more ~/.saves/\!etc\!skel\!.bashrc~ 
+  476  more users.txt 
+  477  sudo emacs users.txt 
+  478  killall -u jupyteradmin 
+  479  ls
+  480  emacs gen_usersSOEE1160.sh
+  481  number_of_users=25
+  482  password_file=~/SOEE1160_users.txt
+  483  touch password_file
+  484  chmod 755 gen_usersSOEE1160.sh 
+  485  sudo ./gen_usersSOEE1160.sh 
+  486  emacs gen_usersSOEE1160.sh 
+  487  password_file_soee1160=~/SOEE1160_users.txt
+  488  touch password_file_soee1160
+  489  sudo ./gen_usersSOEE1160.sh 
+  490  ls
+  491  more password_file_soee1160 
+  492  more users.txt 
+  493  emacs gen_usersSOEE1160.sh 
+  494  sudo ./gen_usersSOEE1160.sh 
+  495  ls
+  496  more users_SOEE1160.txt 
+  497  emacs jupyterhub_config.py 
+  498  sudo cp ./jupyterhub_config.py /etc/jupyterhub/jupyterhub_config.py
+  499  which sudospawner 
+  500  visudo /etc/sudoers
+  501  visudo
+  502  sudo visudo
+  503  more /etc/sudoers
+  504  sudo more /etc/sudoers
+  505  sudo systemctl enable jupyterhub
+  506  sudo systemctl start jupyterhub
+  507  more users_SOEE1160.txt 
+  508  ls /home
+  509  emacs gen_usersSOEE1160.sh 
+  510  sudo ./gen_usersSOEE1160.sh 
+  511  emacs gen_usersSOEE1160.sh 
+  512  ls
+  513  rm -f password_file password_file_soee1160 
+  514  sudo ./gen_usersSOEE1160.sh 
+  515  ls
+  516  emacs gen_usersSOEE1160.sh 
+  517  sudo ./gen_usersSOEE1160.sh 
+  518  emacs gen_usersSOEE1160.sh 
+  519  ls
+  520  rm -f users1160.txt 
+  521  rm -f users_SOEE1160.txt 
+  522  emacs gen_usersSOEE1160.sh 
+  523  sudo ./gen_usersSOEE1160.sh 
+  524  ls
+  525  mpre users1160.txt 
+  526  more users1160.txt 
+  527  sudo systemctl stop jupyterhub
+  528  emacs jupyterhub_config.py 
+  529  sudo cp ./jupyterhub_config.py /etc/jupyterhub/jupyterhub_config.py
+  530  sudo systemctl start jupyterhub
+  531  more users1160.txt 
+  532  sudo systemctl stop jupyterhub
+  533  jupyterhub
+  534  emacs jupyterhub_config.py 
+  535  jupyterhub
+  536  jupyterhub --JupyterHub.spawner_class=sudospawner.SudoSpawner &
+  537  emacs jupyterhub_config.py 
+  538  more /etc/jupyterhub/jupyterhub_config.py 
+  539  sudo cp ./jupyterhub_config.py /etc/jupyterhub/jupyterhub_config.py
+  540  sudo systemctl enable jupyterhub
+  541  sudo systemctl start jupyterhub
+  542  sudo systemctl status jupyterhub
+  543  sudo systemctl restart jupyterhub
+  544  emacs jupyterhub_config.py 
+  545  sudo cp ./jupyterhub_config.py /etc/jupyterhub/jupyterhub_config.py
+  546  sudo systemctl status jupyterhub
+  547  sudo systemctl restart jupyterhub
+  548  emacs jupyterhub_config.py 
+  549  sudo cp ./jupyterhub_config.py /etc/jupyterhub/jupyterhub_config.py
+  550  sudo systemctl restart jupyterhub
+  551  sudo systemctl status jupyterhub
+  552  emacs jupyterhub.service 
+  553  sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
+  554  sudo systemctl restart jupyterhub
+  555  sudo systemctl stop jupyterhub
+  556  sudo systemctl daemon-reload
+  557  sudo systemctl restart jupyterhub
+  558  more jupyterhub.service 
+  559  sudo systemctl stop jupyterhub
+  560  jupyterhub -f /etc/jupyterhub/jupyterhub_config.py --JupyterHub.spawner_clas
+  561  jupyterhub jupyterhub_config.py 
+  562  emac jupyterhub_config.py 
+  563  emacs jupyterhub_config.py 
+  564  jupyterhub jupyterhub_config.py 
+  565  emacs jupyterhub.service 
+  566  sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
+  567  sudo cp ./jupyterhub_config.py /etc/jupyterhub/jupyterhub_config.py
+  568  sudo systemctl restart jupyterhub
+  569  sudo systemctl daemon-reload
+  570  sudo systemctl restart jupyterhub
+  571  exit
+  572  cp -p users1160.txt ../geosciences_instructor/
+  573  sudo cp -p users1160.txt ../geosciences_instructor/
+  574  more users1160.txt 
+  575  more users.txt 
+  576  sudo more /etc/sudoers
+  577  sudo usermod -a -G shadow jupyteradmin
+  578  sudo systemctl restart jupyterhub
+  579  more users1160.txt 
+  580  emacs jupyterhub_config.py 
+  581  sudo cp ./jupyterhub_config.py /etc/jupyterhub/jupyterhub_config.py
+  582  sudo systemctl restart jupyterhub
+  583  ls -l /home/
+  584  ls -l /etc/jupyter
+  585  ls -l /etc/jupyterhub/
+  586  sudo more /etc/sudoers
+  587  group
+  588  groups
+  589  ls users1160.txt 
+  590  more users1160.txt 
+  591  usermod -a -G jupyterhub geosciences_instructor
+  592  usermod -a -G shadow jupyterhub
+  593  sudo more /etc/sudoers
+  594  ls
+  595  sudo systemctl stop jupyterhub
+  596  history | grep debug
+  597  jupyterhub --debug &
+  598  more users1160.txt 
+  599  ls
+  600  which jupyterhub
+  601  emacs jupyterhub.s
+  602  emacs jupyterhub.service 
+  603  sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
+  604  killall -u jupyteradmin 
+  605  sudo systemctl status jupyterhub
+  606  sudo systemctl start jupyterhub
+  607  systemctl daemon-reload
+  608  sudo systemctl daemon-reload
+  609  sudo systemctl start jupyterhub
+  610  more users1160.txt 
+  611  emacs jupyterhub.service 
+  612  sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
+  613  sudo systemctl daemon-reload
+  614  sudo systemctl start jupyterhub
+  615  more jupyterhub_config.py 
+  616  more /etc/jupyterhub/jupyterhub_config.py 
+  617  ls
+  618  cp -p gen_usersSOEE1160.sh gen_users.sh 
+  619  emacs gen_users
+  620  emacs gen_users.sh 
+  621  ls -l users.txt 
+  622  more users.txt 
+  623  ls
+  624  sudo -H -u geosciences_instructor /opt/anaconda3/bin/jupyter nbextension enable --user create_assignment/main
+  625  ls
+  626  conda activate
+  627  which sudospawner 
+  628  more .bashrc
+  629  emacs jupyterhub.service 
+  630  echo $PATH
+  631  sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
+  632  sudo systemctl daemon-reload
+  633  sudo systemctl status jupyterhub
+  634  emacs jupyterhub.service 
+  635  sudo systemctl daemon-reload
+  636  sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
+  637  sudo systemctl daemon-reload
+  638  sudo systemctl start jupyterhub
+  639  sudo systemctl status jupyterhub
+  640  ls
+  641  la
+  642  ls -a /etc/jupyter/
+  643  ls -a /etc/jupyterhub/
+  644  journalctl -u jupyterub
+  645  journalctl -u jupyterhub.service 
+  646  ls
+  647  cd /etc/jupyterhub/
+  648  ls
+  649  rm -f jupyterhub.sqlite 
+  650  cd
+  651  sudo systemctl start jupyterhub
+  652  sudo systemctl stop jupyterhub
+  653  rm -rf /etc/jupyterhub/
+  654  sudo rm -rf /etc/jupyterhub/
+  655  sudo mkdir -p /etc/jupyterhub
+  656  sudo cp ./jupyterhub_config.py /etc/jupyterhub/jupyterhub_config.py
+  657  sudo chown -R jupyteradmin:jupyteradmin /etc/jupyterhub/
+  658  sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
+  659  sudo usermod -a -G shadow jupyteradmin
+  660  sudo setcap 'cap_net_bind_service=+ep' `which nodejs`
+  661  sudo setcap 'cap_net_bind_service=+ep' `which node`
+  662  #Enable the jupyterhub service so it starts at boot
+  663  sudo systemctl enable jupyterhub
+  664  sudo systemctl start jupyterhub
+  665  sudo systemctl resstart jupyterhub
+  666  sudo systemctl restart jupyterhub
+  667  sudo systemctl status jupyterhub
+  668  emacs jupyterhub.service 
+  669  sudo systemctl daemon-reload
+  670  sudo systemctl restart jupyterhub
+  671  sudo systemctl status jupyterhub
+  672  emacs jupyterhub_config.py 
+  673  which configurable-http-proxy 
+  674  emacs jupyterhub_config.py 
+  675  emacs jupyterhub.service 
+  676  sudo systemctl daemon-reload
+  677  sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
+  678  sudo systemctl daemon-reload
+  679  sudo systemctl restart jupyterhub
+  680  sudo systemctl status jupyterhub
+  681  more users.txt 
+  682  more users1160.txt 
+  683  journalctl -u jupyterhub.service 
+  684  ls
+  685  mroe /etc/sudoers
+  686  sudo more /etc/sudoers
+  687  which sudo
+  688  exit
+  689  sudo systemctl status jupyterhub
+  690  sudo systemctl restart jupyterhub
+  691  sudo systemctl status jupyterhub
+  692  journalctl -u jupyterhub.service 
+  693  sudo which -a sudospawner
+  694  which -a sudospawner
+  695  more users1160.txt 
+  696  sudo -u geosciences_instructor sudo -n -u $USER /usr/local/bin/sudospawner --help
+  697  sudo -u geosciences_instructor sudo -n -u $USER /opt/anaconda2/bin/sudospawner --help
+  698  sudo -u geosciences_instructor sudo -n -u $USER /opt/anaconda3/bin/sudospawner --help
+  699  which sudospawner 
+  700  groupadd -g jupyterhub jupyterhub
+  701  groupadd -g 1160 jupyterhub
+  702  sudo groupadd -g 1160 jupyterhub
+  703  usermod -aG geosciences_instructor jupyterhub
+  704  usermod -aG jupyterhub geosciences_instructor
+  705  sudo usermod -aG jupyterhub geosciences_instructor
+  706  more gen_usersSOEE1160.sh 
+  707  emacs addgroups.sh
+  708  chmod 755 addgroups.sh 
+  709  sudo ./addgroups.sh 
+  710  more users.txt 
+  711  ls
+  712  rm -f udo\ which\ -a\ sudospawner 
+  713  ls
+  714  more users1160.txt 
+  715  more addgroups.sh 
+  716  sudo systemctl status jupyterhub
+  717  secretsname=$(sudo find /var/lib/waagent/ -name "*.prv" | cut -c -57)
+  718  echo $secretsname
+  719  secretsname=/var/lib/waagent/3579A804863AEB98FD7FF81D707E7237931EC194
+  720  sudo cp $secretsname.crt /etc/jupyter/ssl/mycert.cert
+  721  sudo cp $secretsname.prv /etc/jupyter/ssl/mycert.prv
+  722  sudo systemctl restart jupyterhub
+  723  more users1160.txt 
+  724  ls
+  725  conda install numba
+  726  sudo apt-get -y install rsnapshot
+  727  sudo sed -i s,/var/cache/rsnapshot/,/backup/,g /etc/rsnapshot.conf
+  728  sudo sed -i 's,backup\t/etc,#backup\t/etc,g' /etc/rsnapshot.conf
+  729  sudo sed -i 's,backup\t/usr/local,#backup /usr/local,g' /etc/rsnapshot.conf
+  730  sed -i '/alpha/s/^#//g' /etc/cron.d/rsnapshot
+  731  emacs gen_usersSOEE1160.sh 
+  732  cp -p gen_usersSOEE1160.sh gen_SOEE1160.sh
+  733  emacs gen_SOEE1160.sh 
+  734  sudo ./gen_SOEE1160.sh 
+  735  ls
+  736  more demonstrators1160.txt 
+  737  sudo cp -p demonstrators1160.txt ../geosciences_instructor/
+  738  chmod +rw /srv/nbgrader/exchange
+  739  mkdir /srv/nbgrader/exchange
+  740  mkdir /srv/nbgrader
+  741  sudo mkdir /srv/nbgrader
+  742  sudo mkdir /srv/nbgrader/exchange
+  743  chmod +rw /srv/nbgrader/exchange
+  744  sudo chmod +rw /srv/nbgrader/exchange
+  745  sudo chown -R jupyteradmin:jupyteradmin /srv/nbgrader/exchange
+  746  more /etc/cron.d/rsnapshot 
+  747  sudo rsnapshot configtest
+  748  sudo rsnapshot -t hourly
+  749  sudo emacs -nw /etc/rsnapshot.conf
+  750  sudo rsnapshot -t alpha
+  751  ls
+  752  ls /
+  753  ls /storage/backup/
+  754  ls
+  755  ls ..
+  756  emacs /opt/anaconda3/pkgs/nb_conda-2.2.1-py37_0/lib/python3.7/site-packages/nb_conda/envmanager.py 
+  757  sudo emacs -nw /etc/rsnapshot.conf
+  758  sudo rsnapshot -t alpha
+  759  ls /storage/backup/l
+  760  ls /storage/backup/
+  761  ls -l /storage/backup/
+  762  touch /storage/backup/alpha.0/
+  763  touch /storage/backup/alpha.0
+  764  sudo chown -R jupyteradmin:jupyteradmin /storage/backup/
+  765  sudo rsnapshot -t alpha
+  766  ls -l /storage/backup/
+  767  mkdir -m 0755 -p /storage/backup/alpha.0/ 
+  768  ls -l /storage/backup/
+  769  ls
+  770  sudo emacs -nw /etc/rsnapshot.conf
+  771  sudo rsnapshot -t alpha
+  772  ls -l /storage/backup/
+  773  ls -l /storage/backup/alpha.0/
+  774  sudo emacs -nw /etc/rsnapshot.conf
+  775  sudo rsnapshot configtest
+  776  sudo rsnapshot --help
+  777  sudo rsnapshot --h
+  778  sudo rsnapshot help
+  779  rm -rf /storage/backup/alpha.0/
+  780  sudo rsnapshot hourly
+  781  sudo rsnapshot alpha
+  782  ls /storage/backup/alpha.0/
+  783  ls /storage/backup/alpha.0/localhost/
+  784  ls /storage/backup/alpha.0/localhost/home/
+  785  ls
+  786  sed -i '/alpha/s/^#//g' /etc/cron.d/rsnapshot
+  787  sudo sed -i '/alpha/s/^#//g' /etc/cron.d/rsnapshot
+  788  sudo sed -i '/beta/s/^#//g' /etc/cron.d/rsnapshot
+  789  sudo sed -i '/gamma/s/^#//g' /etc/cron.d/rsnapshot
+  790  chgrp geosciences_instructor /storage/earth_data/
+  791  sudo chgrp geosciences_instructor /storage/earth_data/
+  792  sudo chmod g+rwx /storage/earth_data/
+  793  sudo emacs -nw /etc/rsnapshot.conf
+  794  ls
+  795  ls /storage/earth_data/
+  796  ls -l  /storage/earth_data/
+  797  ls -l  /storage/
+  798  cd /storage/earth_data/
+  799  touch test
+  800  chmod g+rw
+  801  ls
+  802  cd .
+  803  cd ..
+  804  chmod g+rw earth_data/
+  805  cd
+  806  ls
+  807  ls users1160.txt 
+  808  more  users1160.txt 
+  809  https://github.com/cemac/jupyterhub_on_azure.git
+  810  ls
+  811  git clone https://github.com/cemac/jupyterhub_on_azure.git
+  812  ls -lrt
+  813  ls
+  814  history | grep conda
+  815  conda clean -t
+  816  conda list -e > requirements.txt
+  817  conda env export | grep -v "^prefix: " > environment.yml
+  818  mv requirements.txt jupyterhub_on_azure/
+  819  mv environment.yml jupyterhub_on_azure/
+  820  ls
+  821  history | grep emacs
+  822  cp -p jupyterhub_config.py jupyterhub_on_azure/jupyterhub_setup/
+  823  cp -p jupyterhub_config.py jupyterhub.service/jupyterhub_setup/
+  824  cp -p /opt/anaconda3/pkgs/nb_conda-2.2.1-py37_0/lib/python3.7/site-packages/nb_conda/envmanager.py jupyterhub_on_azure/
+  825  cp -p /etc/cron.d/rsnapshot jupyterhub_on_azure/
+  826  cp -p /etc/sudoers jupyterhub_on_azure/
+  827  history 
+  828  history > history.txt
