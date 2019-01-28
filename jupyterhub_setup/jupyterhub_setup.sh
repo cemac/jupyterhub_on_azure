@@ -70,27 +70,34 @@ sudo mkdir -p /etc/jupyterhub
 sudo cp ./jupyterhub_config.py /etc/jupyterhub/jupyterhub_config.py
 sudo chown -R jupyteradmin:jupyteradmin /etc/jupyterhub/
 
+# Set up nb grader
+sudo mkdir /srv/nbgrader
+sudo mkdir /srv/nbgrader/exchange
+sudo chown -R jupyteradmin:jupyteradmin /srv/nbgrader/exchange
+sudo chmod +rw /srv/nbgrader/exchange
+
 # Set up sudospawner
 # Following docs at https://github.com/jupyterhub/jupyterhub/wiki/Using-sudo-to-run-JupyterHub-without-root-privileges retrieved 19th September 2018
 #
 # WARNING /etc/sudoers can have NO MISTAKES
 #
-# PRECAUTION chmod
-sudo chmod 446 /etc/sudoers
-echo "Cmnd_Alias JUPYTER_CMD=/usr/local/bin/sudospawner" | sudo tee -a /etc/sudoers
-echo "%jupyterhub ALL=(jupyteradmin) /usr/bin/sudo" | sudo tee -a /etc/sudoers
-echo "jupyteradmin ALL=(%jupyterhub) NOPASSWD:JUPYTER_CMD" | sudo tee -a /etc/sudoers
-# If there is a mistake you won't be able to re sudo the sudo file!
-sudo chmod 440 /etc/sudoers
+# PRECAUTION visudo only
+# USE visudo to add the following lines to /etc/sudo
+echo "use visudo to do this bit"
+Cmnd_Alias JUPYTER_CMD=/opt/anaconda3/bin/sudospawner
+%jupyterhub ALL=(jupyteradmin) /usr/bin/sudo
+jupyteradmin ALL=(%jupyterhub) NOPASSWD:JUPYTER_CMD
+# nano: press Ctrl+X, then y to confirm you want to save changes.
+# Then press Enter WITHOUT changing the default filename
 # Set up jupyterhub as a service
 sudo cp ./jupyterhub.service /etc/systemd/system/jupyterhub.service
 
 # Make our user part of the shadow group so that PAM authentication works
 sudo usermod -a -G shadow jupyteradmin
 
-#Do this next line or we'll not be able to connect to port 443
-#Details at https://github.com/jupyterhub/jupyterhub/issues/774
-sudo setcap 'cap_net_bind_service=+ep' `which nodejs`
+# Do this next line or we'll not be able to connect to port 443
+# Details at https://github.com/jupyterhub/jupyterhub/issues/774
+# sudo setcap 'cap_net_bind_service=+ep' `which nodejs`
 sudo setcap 'cap_net_bind_service=+ep' `which node`
 
 #Enable the jupyterhub service so it starts at boot
