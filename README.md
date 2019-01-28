@@ -5,7 +5,8 @@
 </div>
 
 # CEMAC FORK OF MIKE CROUCHERS JUPYERHUB ON AZURE
-
+ 
+ :construction: MAJOR OVERHAUL OF DOCUMENTATION IN PROGRESS
 
 [![GitHub release](https://img.shields.io/badge/release-v.2.0-blue.svg)](
 https://github.com/cemac/jupyterhub_on_azure/releases/tag/2.0)
@@ -48,8 +49,6 @@ is now managed by Leeds central IT - the scripts are preserved for reference in 
 
 ## Tips ##
 
-* Your connection is not private - `NET::ERR_CERT_AUTHORITY_INVALID`
-  * [fix the clock](https://askubuntu.com/questions/214246/how-to-fix-wrong-system-time-and-date)
 
 ## COLLABORATING
 
