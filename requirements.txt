@@ -31,10 +31,10 @@ bokeh=0.13.0=py37_0
 boto=2.49.0=py37_0
 bottleneck=1.2.1=py37h035aef0_1
 bzip2=1.0.6=h14c3975_5
-ca-certificates=2018.12.5=0
+ca-certificates=2018.11.29=ha4d7672_0
 cairo=1.14.12=h8948797_3
 cartopy=0.17.0=py37hbb7e04d_1
-certifi=2018.11.29=py37_0
+certifi=2018.11.29=py37_1000
 cffi=1.11.5=py37he75722e_1
 cftime=1.0.3.4=py37hdd07704_0
 chardet=3.0.4=py37_1
@@ -48,8 +48,8 @@ conda-env=2.6.0=1
 configurable-http-proxy=1.3.0=0
 constantly=15.1.0=py37h28b3542_0
 contextlib2=0.5.5=py37_0
-cryptography=2.4.2=py37h1ba5d50_0
-curl=7.63.0=hbc83047_1000
+cryptography=2.3.1=py37hb7f436b_1000
+curl=7.63.0=h646f8bb_1000
 cycler=0.10.0=py37_0
 cython=0.29.2=py37he6710b0_0
 cytoolz=0.9.0.1=py37h14c3975_1
@@ -117,9 +117,9 @@ jupyterlab=0.34.9=py37_0
 jupyterlab_launcher=0.13.1=py37_0
 keyring=13.2.1=py37_0
 kiwisolver=1.0.1=py37hf484d3e_0
-krb5=1.16.1=h173b8e3_7
+krb5=1.16.2=hc83ff2d_1000
 lazy-object-proxy=1.3.1=py37h14c3975_2
-libcurl=7.63.0=h20c2e04_1000
+libcurl=7.63.0=h01ee5af_1000
 libedit=3.1.20170329=h6b74fdf_2
 libffi=3.2.1=hd88cf55_4
 libgcc-ng=8.2.0=hdf63c60_1
@@ -127,7 +127,7 @@ libgfortran-ng=7.3.0=hdf63c60_0
 libnetcdf=4.6.1=h10edf3e_2
 libpng=1.6.36=hbc83047_0
 libsodium=1.0.16=h1bed415_0
-libssh2=1.8.0=h1ba5d50_4
+libssh2=1.8.0=h1ad7b7a_1003
 libstdcxx-ng=8.2.0=hdf63c60_1
 libtiff=4.0.9=he85c1e1_2
 libtool=2.4.6=h544aabb_3
@@ -166,7 +166,7 @@ networkx=2.1=py37_0
 nltk=3.3.0=py37_0
 nodejs=10.13.0=he6710b0_0
 nose=1.3.7=py37_2
-notebook=5.6.0=py37_0
+notebook=5.7.4=py37_0
 numba=0.42.0=py37h962f231_0
 numexpr=2.6.8=py37hd89afb7_0
 numpy=1.15.4=py37h7e9f1db_0
@@ -175,7 +175,7 @@ numpydoc=0.8.0=py37_0
 odo=0.5.1=py37_0
 olefile=0.46=py37_0
 openpyxl=2.5.6=py37_0
-openssl=1.1.1a=h7b6447c_0
+openssl=1.0.2p=h14c3975_1002
 owslib=0.17.0=py37_0
 packaging=17.1=py37_0
 pamela=1.0.0=py_0
@@ -210,8 +210,8 @@ pyasn1-modules=0.2.2=py37_0
 pycodestyle=2.4.0=py37_0
 pycosat=0.6.3=py37h14c3975_0
 pycparser=2.18=py37_1
-pycrypto=2.6.1=py37h14c3975_9
-pycurl=7.43.0.2=py37h1ba5d50_0
+pycrypto=2.6.1=py37h14c3975_1002
+pycurl=7.43.0.2=py37hb7f436b_0
 pyepsg=0.4.0=py37_0
 pyflakes=2.0.0=py37_0
 pygments=2.2.0=py37_0
@@ -231,7 +231,7 @@ pytest-astropy=0.4.0=py37_0
 pytest-doctestplus=0.1.3=py37_0
 pytest-openfiles=0.3.0=py37_0
 pytest-remotedata=0.3.0=py37_0
-python=3.7.2=h0371630_0
+python=3.7.1=hd21baee_1000
 python-dateutil=2.7.3=py37_0
 python-editor=1.0.3=py_0
 python-oauth2=1.1.0=py37h28b3542_1
@@ -239,12 +239,12 @@ pytz=2018.5=py37_0
 pywavelets=1.0.0=py37hdd07704_0
 pyyaml=3.13=py37h14c3975_0
 pyzmq=17.1.2=py37h14c3975_0
-qt=5.9.7=h5867ecd_1
+qt=5.9.6=h8703b6f_2
 qtawesome=0.4.4=py37_0
 qtconsole=4.4.1=py37_0
 qtpy=1.5.0=py37_0
 readline=7.0=h7b6447c_5
-requests=2.19.1=py37_0
+requests=2.21.0=py37_1000
 rope=0.11.0=py37_0
 ruamel_yaml=0.15.46=py37h14c3975_0
 scikit-image=0.14.0=py37hf484d3e_1
