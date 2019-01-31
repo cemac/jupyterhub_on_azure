@@ -38,7 +38,7 @@ have palatially done this.
 
 ## Section 2 - Users
 
-1.edit `etc/skel/.bashrc` using favourite editor with sudo
+1. edit `etc/skel/.bashrc` using favourite editor with sudo
 add aliases etc you want to be default across users e.g.
   ```bash
   # Personal aliases:
@@ -49,6 +49,15 @@ add aliases etc you want to be default across users e.g.
 2. Alter settings and set number of users e.g. 42
 3. Running ./gen_users.sh creates random passwords for 42 training users and 1 instructor
   unless set otherwise. You will now have all the user accounts on the machine.
+4. Linux groups: To use jupyter hub server a jupyterhub group is created and the
+  users are added to that group.
+5. The instructor is added to an addtional instructor group
+
+## Section 3 - backups
+
+The disks were mounted by IT at /storage backup and earthdata
+
+
 
 ## Next Step ##
 

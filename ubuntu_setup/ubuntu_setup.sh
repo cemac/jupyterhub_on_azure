@@ -74,9 +74,21 @@ sudo ./gen_users.sh
 sudo apt-get -y install rsnapshot
 # Snapshot_root location
 sudo sed -i s,/var/cache/rsnapshot/,/storage/backup/,g /etc/rsnapshot.conf
+# Permission default to root access
+sudo chown -R jupyteradmin:jupyteradmin /storage/backup/
+sudo rsnapshot -t alpha
+sudo rsnapshot help
+sudo chgrp geosciences_instructor /storage/earth_data/
+sudo chmod g+rwx /storage/earth_data/
+sudo emacs -nw /etc/rsnapshot.conf
+chmod g+rw earth_data/
+history > history.txt
 # We don't want to back up /etc and /usr/local so comment these lines out
 sudo sed -i 's,backup\t/etc,#backup\t/etc,g' /etc/rsnapshot.conf
 sudo sed -i 's,backup\t/usr/local,#backup /usr/local,g' /etc/rsnapshot.conf
+# test config
+sudo rsnapshot configtest
+sudo rsnapshot -t alpha
 # Activate the cron job by uncommenting the relevant lines
 sudo sed -i '/alpha/s/^#//g' /etc/cron.d/rsnapshot
 sudo sed -i '/beta/s/^#//g' /etc/cron.d/rsnapshot
