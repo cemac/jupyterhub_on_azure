@@ -75,7 +75,9 @@ sudo mkdir /srv/nbgrader
 sudo mkdir /srv/nbgrader/exchange
 sudo chown -R jupyteradmin:jupyteradmin /srv/nbgrader/exchange
 sudo chmod +rw /srv/nbgrader/exchange
-
+sudo chgrp geosciences_instructor /srv/nbgrader/exchange
+sudo chmod g+rw /srv/nbgrader/exchange
+sudo chmod o+rx /srv/nbgrader/exchange
 # Set up sudospawner
 # Following docs at https://github.com/jupyterhub/jupyterhub/wiki/Using-sudo-to-run-JupyterHub-without-root-privileges retrieved 19th September 2018
 #
