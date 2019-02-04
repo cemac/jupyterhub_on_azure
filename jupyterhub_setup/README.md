@@ -11,13 +11,16 @@ add users to jupyterhub group
 
 Assignment tab is all crazy: /srv/nbgrader/exchange is not writable
 
+
 **fix**
 
 ```
 sudo mkdir /srv/nbgrader
 sudo mkdir /srv/nbgrader/exchange
 sudo chown -R jupyteradmin:jupyteradmin /srv/nbgrader/exchange
-sudo chmod +rw /srv/nbgrader/exchange
+sudo chmod ugo+rw /srv/nbgrader/exchange
+
+
 ```
 ## Conda environment fix
 
