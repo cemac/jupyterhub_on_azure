@@ -83,10 +83,10 @@ sudo chmod g+rwx /storage/earth_data/
 sudo emacs -nw /etc/rsnapshot.conf
 chmod g+rw earth_data/
 history > history.txt
-# We don't want to back up /etc and /usr/local so comment these lines out
-sudo sed -i 's,backup\t/etc,#backup\t/etc,g' /etc/rsnapshot.conf
+# We don't want to back up /usr/local so comment these lines out
 sudo sed -i 's,backup\t/usr/local,#backup /usr/local,g' /etc/rsnapshot.conf
 # test config
+# Needs tabs in specific places so do a test!
 sudo rsnapshot configtest
 sudo rsnapshot -t alpha
 # Activate the cron job by uncommenting the relevant lines
