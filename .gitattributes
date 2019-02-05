@@ -1,2 +1,2 @@
-fututre/security.md filter=git-crypt diff=git-crypt
+future/security.md filter=git-crypt diff=git-crypt
 *.key filter=git-crypt diff=git-crypt
