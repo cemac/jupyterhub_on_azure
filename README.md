@@ -6,10 +6,11 @@
 
 # CEMAC FORK OF MIKE CROUCHERS JUPYERHUB ON AZURE
  
+
+[![GitHub release](https://img.shields.io/github/release/cemac/jupyterhub_on_azure.svg)](https://github.com/cemac/jupyterhub_on_azure/releases) [![GitHub top language](https://img.shields.io/github/languages/top/cemac/jupyterhub_on_azure.svg)](https://github.com/cemac/jupyterhub_on_azure) [![GitHub issues](https://img.shields.io/github/issues/cemac/jupyterhub_on_azure.svg)](https://github.com/cemac/jupyterhub_on_azure/issues) [![GitHub last commit](https://img.shields.io/github/last-commit/cemac/jupyterhub_on_azure.svg)](https://github.com/cemac/jupyterhub_on_azure/commits/master) [![GitHub All Releases](https://img.shields.io/github/downloads/cemac/jupyterhub_on_azure/total.svg)](https://github.com/cemac/jupyterhub_on_azure/releases)
+
  :construction: MAJOR OVERHAUL OF DOCUMENTATION IN PROGRESS
 
-[![GitHub release](https://img.shields.io/badge/release-v.2.0-blue.svg)](
-https://github.com/cemac/jupyterhub_on_azure/releases/tag/2.0)
 
 This repository contains scripts for automatic creation of customised JupyterHub instances running on Azure cloud designed for multi-user classes.
 
