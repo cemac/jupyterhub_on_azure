@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-!--- These lines "< !-- -- >" are comment line to help you fill out the bug report, they will not appear in the report  -->
+<!--- These lines "< !-- -- >" are comment line to help you fill out the bug report, they will not appear in the report  -->
 <!--- Provide a general summary of the issue in the Title above -->
 
 ## Expected Behavior
