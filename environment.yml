@@ -34,7 +34,7 @@ dependencies:
   - boto=2.49.0=py37_0
   - bottleneck=1.2.1=py37h035aef0_1
   - bzip2=1.0.6=h14c3975_5
-  - ca-certificates=2019.1.23=0
+  - ca-certificates=2019.3.9=hecc5488_0
   - cairo=1.14.12=h8948797_3
   - cartopy=0.17.0=py37hbb7e04d_1
   - certifi=2019.3.9=py37_0
@@ -178,7 +178,7 @@ dependencies:
   - odo=0.5.1=py37_0
   - olefile=0.46=py37_0
   - openpyxl=2.5.6=py37_0
-  - openssl=1.1.1b=h7b6447c_1
+  - openssl=1.1.1b=h14c3975_1
   - owslib=0.17.0=py37_0
   - packaging=17.1=py37_0
   - pamela=1.0.0=py_0
@@ -286,7 +286,7 @@ dependencies:
   - twisted=18.7.0=py37h14c3975_1
   - unicodecsv=0.14.1=py37_0
   - unixodbc=2.3.7=h14c3975_0
-  - urllib3=1.24.1=py37_0
+  - urllib3=1.24.2=py37_0
   - wcwidth=0.1.7=py37_0
   - webencodings=0.5.1=py37_1
   - werkzeug=0.14.1=py37_0
