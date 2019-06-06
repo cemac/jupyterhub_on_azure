@@ -16,14 +16,14 @@ Current set up is a bit rough and ready as improvements crop up I'll add them he
 
 1. Course specific groups
   ```bash
-  sudo groupadd SOEEXXYY  # create group
+  sudo groupadd SOEEYYYY  # create group
   # putting the student home directory is on a separate drive on this workstation
-  sudo useradd -G SOEEXXYY -d /storage/earthdata/home/student_username_here student_username_here
+  sudo useradd -G SOEEYYYY -d /storage/earthdata/home/student_username_here student_username_here
   # Allow use of jupyterhub
   sudo useradd -G jupyterhub <user_name>
   ```
   * That way you wouldn't have to fiddle with configureation but can set group permissions
   ```python
   # Add to jupyterhub_config.py
-  c.LocalAuthenticator.group_whitelist = {'SOEEXXYY'}
+  c.LocalAuthenticator.group_whitelist = {'SOEEYYYY'}
   ```
