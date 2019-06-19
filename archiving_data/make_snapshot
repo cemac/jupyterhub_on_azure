@@ -1,0 +1,60 @@
+#!/bin/bash -x
+
+# snapshot directory:
+snapshot_dir='/storage/earth_data/system/snapshots'
+# snapshot date:
+snapshot_date=$(date +%Y%m%d%H%M%S)
+# target directory:
+target_dir="${snapshot_dir}/${snapshot_date}"
+# default rsync options:
+rsync_default_options='-axSHAX'
+# sources:
+data_src[0]='/'
+data_src[1]='/storage/earth_data'
+# targets:
+data_target[0]='root'
+data_target[1]='data'
+# options:
+rsync_options[0]=
+rsync_options[1]=--exclude="system/"
+# location to backup entire snapshot directory:
+backup_dir='/storage/backup/system'
+
+# if snapshot directory does not exist, give up:
+if [ ! -d ${snapshot_dir} ] ; then
+  exit
+fi
+
+# check for 'latest' snapshot:
+if [ -e ${snapshot_dir}/latest ] ; then
+  snapshot_latest=$(readlink -f ${snapshot_dir}/latest)
+else
+  snapshot_latest=''
+fi
+
+# make target directory:
+mkdir ${target_dir} || exit
+
+# loop through rsync sources / targets:
+for i in $(seq 0 ${#data_src})
+do
+  # make target dir:
+  mkdir ${target_dir}/${data_target[${i}]}
+  # check for 'latest' version of this src:
+  if [ ! -z "${snapshot_latest}" ] && [ -d ${snapshot_latest}/${data_targer[${i}]} ] ; then
+    my_rsync_options="--link-dest=${snapshot_latest}/${data_target[${i}]} ${rsync_options[${i}]}"
+  else
+    my_rsync_options="${rsync_options[${i}]}"
+  fi
+  # sync:
+  rsync ${rsync_default_options} ${my_rsync_options} ${data_src[${i}]}/ ${target_dir}/${data_target[${i}]}/
+done
+
+# update 'latest':
+\rm ${snapshot_dir}/latest
+ln -s $(basename ${target_dir}) ${snapshot_dir}/latest
+
+# backup everything ... :
+if [ ! -z ${backup_dir} ] ; then
+  rsync ${rsync_default_options} ${snapshot_dir} ${backup_dir}/
+fi
